@@ -1,0 +1,11 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span class="nav-title" style="margin-right: 1em;">DataMoney </span>
+    <span class="spacer"></span>
+    <button mat-button *ngIf="authService.isLoggedIn()" (click)="logout()">Logout</button>
+    <button mat-button *ngIf="!authService.isLoggedIn()" (click)="login()">Login</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div id="content">
+  <router-outlet></router-outlet>
+</div>

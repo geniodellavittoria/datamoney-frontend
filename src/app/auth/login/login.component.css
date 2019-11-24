@@ -1,0 +1,10 @@
+mat-form-field {
+  width: 100%;
+}
+
+.login-dialog {
+  width: 50%;
+  margin: 2em auto;
+  padding: 1em;
+  border: 1px solid black;
+}

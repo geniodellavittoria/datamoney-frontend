@@ -1,0 +1,4 @@
+
+interface SessionData {
+  token: string;
+}
