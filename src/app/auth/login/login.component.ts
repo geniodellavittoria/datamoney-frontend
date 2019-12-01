@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from "../auth.service";
-import {Observable} from "rxjs";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
+import {AuthService} from '../auth.service';
+import {Observable} from 'rxjs';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login() {
+  public login() {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.getRawValue())
         .subscribe(res => {
@@ -36,5 +36,9 @@ export class LoginComponent implements OnInit {
           this.error = err.error.message;
         });
     }
+  }
+
+  register() {
+    this.router.navigate(['/user', 'register']);
   }
 }

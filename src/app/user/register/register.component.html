@@ -1,0 +1,18 @@
+<div class="register-form">
+
+  <h1>Register</h1>
+  <p style="color:red;" *ngIf="error">{{error}}</p>
+  <form class="login-form" [formGroup]="registerForm">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Username" formControlName="username" required/>
+    </mat-form-field>
+    <app-error-messages [ctrl]="registerForm.get('username')"></app-error-messages>
+
+    <mat-form-field class="full-width">
+      <input matInput type="password" placeholder="Password" formControlName="password" required/>
+    </mat-form-field>
+    <app-error-messages [ctrl]="registerForm.get('password')"></app-error-messages>
+
+  </form>
+  <button mat-raised-button color="primary" (click)="register()">Register</button>
+</div>

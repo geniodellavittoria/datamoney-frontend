@@ -1,5 +1,8 @@
-export const baseUrl = 'http://localhost:3000/api/v1';
+import {environment} from '../../environments/environment';
+
+export const baseUrl = `${environment.backendUrl}/api/v1`;
 
 export let Api = {
-  login: baseUrl + '/login'
+  login: `${baseUrl}/login`,
+  register: `${baseUrl}/user`
 };

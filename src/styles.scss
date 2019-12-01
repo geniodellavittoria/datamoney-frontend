@@ -2,3 +2,19 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#content {
+  margin: 2em;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.button-row button {
+  margin-right: 1em;
+}
+
+.icon-button {
+  cursor: pointer;
+}
