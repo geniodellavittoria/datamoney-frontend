@@ -1,0 +1,13 @@
+<div class="register-form">
+
+  <h1>Data</h1>
+  <p style="color:red;" *ngIf="error">{{error}}</p>
+  <form class="login-form" [formGroup]="patientDataForm">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Username" formControlName="data" required/>
+    </mat-form-field>
+    <app-error-messages [ctrl]="patientDataForm.get('data')"></app-error-messages>
+
+  </form>
+  <button mat-raised-button color="primary" (click)="saveData()">Add data</button>
+</div>
