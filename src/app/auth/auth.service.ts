@@ -1,9 +1,11 @@
 import {HttpClient} from '@angular/common/http';
-import {Injectable, OnInit} from '@angular/core';
-import {LoginForm} from "../dto/loginForm";
-import {catchError, map} from "rxjs/operators";
-import {Observable} from "rxjs";
+import {Injectable} from '@angular/core';
+import {LoginForm} from '../dto/loginForm';
+import {catchError, map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 import {Api} from '../config/api';
+import * as JwtDecode from 'jwt-decode';
+import {User} from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +34,9 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem(AuthService.SESSION_KEY);
+  }
+
+  getSessionData() {
+    return JwtDecode<User>(localStorage.getItem(AuthService.SESSION_KEY));
   }
 }
