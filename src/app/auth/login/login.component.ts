@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../auth.service';
-import {Observable} from 'rxjs';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
@@ -31,7 +30,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.loginForm.getRawValue())
         .subscribe(res => {
           this.error = null;
-          this.router.navigate(['/users']);
+          this.router.navigate(['/user/profile']);
         }, err => {
           this.error = err.error.message;
         });
