@@ -1,1 +1,7 @@
-<p>profile works!</p>
+<h1>Datasets</h1>
+<div *ngFor="let dataSet of dataSets">
+    <mat-card style="margin: 5px;">
+        <mat-card-title>{{dataSet.hash}}</mat-card-title>
+        {{dataSet.rawData}}
+    </mat-card>
+</div>
