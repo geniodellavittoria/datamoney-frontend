@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../user.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -29,7 +29,9 @@ export class RegisterComponent implements OnInit {
   register() {
     if (this.registerForm.valid) {
       this.userService.register(this.registerForm.getRawValue() as UserRegisterForm)
-        .subscribe(res => console.log(res));
+        .subscribe(res => {
+          this.router.navigate(['/login']);
+        });
     }
   }
 

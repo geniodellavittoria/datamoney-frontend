@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AbstractControl, FormControl} from "@angular/forms";
+import {AbstractControl} from '@angular/forms';
 
 @Component({
   selector: 'app-error-messages',
@@ -21,7 +21,6 @@ export class ErrorMessagesComponent implements OnInit {
   }
 
   shouldShowErrors(): boolean {
-    console.log(this.ctrl, this.ctrl.errors, this.ctrl.touched);
     return this.ctrl && this.ctrl.errors != null;
   }
 
