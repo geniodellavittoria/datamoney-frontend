@@ -1,4 +1,5 @@
 export interface DataSet {
+    ownerId: string;
     hash: string;
-    rawData: string;
+    data: string;
 }
