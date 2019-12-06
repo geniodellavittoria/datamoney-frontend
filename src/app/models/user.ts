@@ -6,5 +6,6 @@ export interface User {
   publicWalletId: string;
   username: string;
   password?: string;
+  publicKey: string;
 }
 

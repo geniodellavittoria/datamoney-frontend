@@ -1,6 +1,14 @@
 <div class="marketplace">
 
   <div class="offer" *ngFor="let offer of offers | async">
-    {{offer | json}}
+      <mat-card style="margin: 5px;">
+        <mat-card-title>Offer</mat-card-title>
+        <h4>OwnerId:</h4>{{offer.ownerId}}
+        <h4>Price:</h4>{{offer.price}}
+        <h4>Description:</h4>{{offer.description}}
+        <br />
+        <button mat-raised-button color="primary" (click)="acceptOffer(offer)">Accept Offer</button>
+      </mat-card>
+
   </div>
 </div>

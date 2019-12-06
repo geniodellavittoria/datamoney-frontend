@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { DataSet } from 'src/app/dto/dataSet';
-import { ProfileService, Data } from './profile.service';
-import { AuthService } from 'src/app/auth/auth.service';
+import {Component, OnInit} from '@angular/core';
+import {DataSet} from 'src/app/dto/dataSet';
+import {ProfileService} from './profile.service';
+import {AuthService} from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
 
   public profileService: ProfileService;
   public authService: AuthService;
-  public dataSets: DataSet[] = []
+  public dataSets: DataSet[] = [];
   constructor(
     profileService: ProfileService,
     authService: AuthService) {
