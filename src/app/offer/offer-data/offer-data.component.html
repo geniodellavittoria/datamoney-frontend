@@ -1,0 +1,29 @@
+<div class="offer-data">
+  <h1>Offer Data</h1>
+  <p style="color:red;" *ngIf="error">{{error}}</p>
+  <form class="login-form" [formGroup]="offerDataForm">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Description" formControlName="description" required/>
+    </mat-form-field>
+    <app-error-messages [ctrl]="offerDataForm.get('description')"></app-error-messages>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Price" formControlName="price" required/>
+    </mat-form-field>
+    <app-error-messages [ctrl]="offerDataForm.get('price')"></app-error-messages>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Expire Date" formControlName="expireDate" required/>
+    </mat-form-field>
+    <app-error-messages [ctrl]="offerDataForm.get('expireDate')"></app-error-messages>
+
+    <div *ngFor="let dataSet of dataSets">
+      <mat-card style="margin: 5px;">
+        <mat-card-title>{{dataSet.hash}}</mat-card-title>
+        {{dataSet.rawData}}
+      </mat-card>
+
+    </div>
+  </form>
+  <button mat-raised-button color="primary" (click)="createOffer()">Create Offer</button>
+</div>
