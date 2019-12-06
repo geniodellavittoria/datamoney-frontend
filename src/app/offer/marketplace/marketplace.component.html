@@ -1,1 +1,6 @@
-<p>marketplace works!</p>
+<div class="marketplace">
+
+  <div class="offer" *ngFor="let offer of offers | async">
+    {{offer | json}}
+  </div>
+</div>

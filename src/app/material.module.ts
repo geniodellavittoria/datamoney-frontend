@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import {MatCheckboxModule} from '@angular/material';
-import {MatButtonModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatNativeDateModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -64,8 +63,14 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
-
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
+  providers: [
+    MatDatepickerModule,
+
+  ]
+
 })
 export class MaterialModule { }

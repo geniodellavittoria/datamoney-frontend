@@ -18,4 +18,8 @@ export class OfferService {
   addOffer(offer: Offer) {
     return this.http.post(this.serviceUrl, offer);
   }
+
+  getOffers() {
+    return this.http.get<Offer>(this.serviceUrl);
+  }
 }

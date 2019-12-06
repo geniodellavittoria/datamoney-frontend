@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Offer} from '../../models/offer';
+import {OfferService} from '../offer.service';
 
 @Component({
   selector: 'app-marketplace',
@@ -7,9 +10,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MarketplaceComponent implements OnInit {
 
-  constructor() { }
+  offers: Observable<Offer>;
+
+  constructor(private offerService: OfferService) { }
 
   ngOnInit() {
+    this.offers = this.offerService.getOffers();
   }
 
 }

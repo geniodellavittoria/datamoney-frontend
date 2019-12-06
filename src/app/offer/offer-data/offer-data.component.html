@@ -13,7 +13,9 @@
     <app-error-messages [ctrl]="offerDataForm.get('price')"></app-error-messages>
 
     <mat-form-field class="full-width">
-      <input matInput placeholder="Expire Date" formControlName="expireDate" required/>
+      <input matInput placeholder="Expire Date" formControlName="expireDate" [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <app-error-messages [ctrl]="offerDataForm.get('expireDate')"></app-error-messages>
 
