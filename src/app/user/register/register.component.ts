@@ -10,6 +10,7 @@ import {UserRegisterForm} from '../../dto/userRegisterForm';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  roles: string[] = ['doctor', 'patient', 'buyer'];
 
   registerForm: FormGroup;
   error: any;
@@ -22,7 +23,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      role: ['', Validators.required]
     });
   }
 

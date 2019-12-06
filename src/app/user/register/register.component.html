@@ -13,6 +13,14 @@
     </mat-form-field>
     <app-error-messages [ctrl]="registerForm.get('password')"></app-error-messages>
 
+    <mat-form-field class="full-width">
+      <mat-select formControlName="role" placeholder="Role">
+        <mat-option [value]="role"
+                    *ngFor="let role of roles">{{role}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <app-error-messages [ctrl]="registerForm.get('role')"></app-error-messages>
+
   </form>
   <button mat-raised-button color="primary" (click)="register()">Register</button>
 </div>

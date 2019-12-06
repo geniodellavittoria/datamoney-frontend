@@ -4,7 +4,7 @@
   <p style="color:red;" *ngIf="error">{{error}}</p>
   <form class="login-form" [formGroup]="patientDataForm">
     <mat-form-field class="full-width">
-      <input matInput placeholder="Username" formControlName="data" required/>
+      <input matInput placeholder="Data" formControlName="data" required/>
     </mat-form-field>
     <app-error-messages [ctrl]="patientDataForm.get('data')"></app-error-messages>
 
