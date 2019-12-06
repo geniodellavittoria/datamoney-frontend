@@ -1,4 +1,7 @@
-<h1>Datasets</h1>
+<h4>Balance:</h4>{{authService.getSessionData().balance}}
+<h4>Public Wallet ID:</h4>{{authService.getSessionData().publicWalletId}}
+<h4>Private Wallet ID:</h4>{{authService.getSessionData().privateWalletId}}
+<h4>Datasets</h4>
 <div *ngFor="let dataSet of dataSets">
     <mat-card style="margin: 5px;">
         <mat-card-title>Dataset</mat-card-title>

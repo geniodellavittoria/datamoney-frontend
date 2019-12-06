@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {DataSet} from 'src/app/dto/dataSet';
-import {ProfileService} from './profile.service';
-import {AuthService} from 'src/app/auth/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { DataSet } from 'src/app/dto/dataSet';
+import { ProfileService } from './profile.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,6 +13,7 @@ export class ProfileComponent implements OnInit {
   public profileService: ProfileService;
   public authService: AuthService;
   public dataSets: DataSet[] = [];
+  public privateWalletId: string;
   constructor(
     profileService: ProfileService,
     authService: AuthService) {
@@ -21,6 +22,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.privateWalletId = this.authService.getSessionData().privateWalletId;
     const accountId = this.authService.getSessionData().username;
     this.profileService.getData(accountId).subscribe(res => {
       console.log(res.dataFragment);
