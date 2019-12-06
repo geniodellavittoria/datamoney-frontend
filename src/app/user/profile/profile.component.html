@@ -1,8 +1,9 @@
 <h1>Datasets</h1>
-<div *ngFor="let dataSet of dataSets | async">
+<div *ngFor="let dataSet of dataSets">
     <mat-card style="margin: 5px;">
-        <mat-card-title>{{dataSet.hash}}</mat-card-title>
-        {{dataSet.rawData}}
+        <mat-card-title>Dataset</mat-card-title>
+        <h4>Data:</h4>{{dataSet.data}}
+        <h4>Hash:</h4>{{dataSet.hash}}
     </mat-card>
 
 </div>

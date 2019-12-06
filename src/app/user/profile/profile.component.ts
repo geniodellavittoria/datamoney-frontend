@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataSet } from 'src/app/dto/dataSet';
-import { ProfileService } from './profile.service';
+import { ProfileService, Data } from './profile.service';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
@@ -22,9 +22,9 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     const accountId = this.authService.getSessionData().username;
-    console.log(accountId);
     this.profileService.getData(accountId).subscribe(res => {
-      this.dataSets = res;
+      console.log(res.dataFragment);
+      this.dataSets = res.dataFragment;
     });
   }
 

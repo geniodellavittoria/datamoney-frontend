@@ -14,10 +14,12 @@ export class ProfileService {
   }
 
   getData(accountId: string) {
-    const data: DataSet[] = [];
-    var result = this.http.get<DataSet[]>(`${this.serviceUrl}/${accountId}/data`);
-    console.log(result);
-    return result;
+    const data: Data[] = [];
+    return this.http.get<Data>(`${this.serviceUrl}/${accountId}/data`);
   }
 
+}
+
+export interface Data {
+  dataFragment: DataSet[];
 }
